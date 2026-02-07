@@ -51,14 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </td>
                 <td>
                     <input type="radio" name="sesso" value="M">
+                    <label>Maschio</label><br>
+                    <input type="radio" name="sesso" value="F">
+                    <label>Femmina</label><br>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Età:
+                    Data di nascita:
                 </td>
                 <td>
-                    INT
+                    <input type="date" name="dataDiNascita">
                 </td>
             </tr>
             <tr>
@@ -66,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Altezza mani sollevamento:
                 </td>
                 <td>
-                    INT
+                    <input type="number" min="0" max="300" name="altezzaManiSoll">
                 </td>
             </tr>
             <tr>
@@ -74,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Altezza mani verticale:
                 </td>
                 <td>
-                    INT
+                    <input type="number" min="0" max="300" name="altezzaManiVert">
                 </td>
             </tr>
             <tr>
@@ -82,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Altezza mani orizzontale:
                 </td>
                 <td>
-                    INT
+                    <input type="number" min="0" max="100" name="altezzaManiOr">
                 </td>
             </tr>
             <tr>
@@ -90,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Dislocazione angolare:
                 </td>
                 <td>
-                    INT
+                    <input type="number" min="0" max="360" name="DislocazioneAngolare">
                 </td>
             </tr>
             <tr>
@@ -98,15 +101,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Giudizio presa carico:
                 </td>
                 <td>
-                    INT
+                    <input type="number" min="0" max="1" range="0,01" name="GiudizioPresa">
                 </td>
             </tr>
             <tr>
                 <td>
-                    Frequenza gesti:
+                    Frequenza gesti al minuto:
                 </td>
                 <td>
-                    Decimal
+                    <input type="radio" name="FrequenzaGesti" value="0,2">
+                    <label>0.20</label><br>
+                    <input type="radio" name="FrequenzaGesti" value="1">
+                    <label>1</label><br>
+                    <input type="radio" name="FrequenzaGesti" value="4">
+                    <label>4</label><br>
+                    <input type="radio" name="FrequenzaGesti" value="6">
+                    <label>6</label><br>
+                    <input type="radio" name="FrequenzaGesti" value="9">
+                    <label>9</label><br>
+                    <input type="radio" name="FrequenzaGesti" value="12">
+                    <label>12</label><br>
+
                 </td>
             </tr>
             <tr>
@@ -114,7 +129,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Frequenza lavoro:
                 </td>
                 <td>
-
+                    <input type="radio" name="FrequenzaLavoro" value="1">
+                    <label>Continuo < 1 ora </label><br>
+                    <input type="radio" name="FrequenzaLavoro" value="0.95">
+                    <label>Continuo da 1 a 2 ore</label><br>
+                    <input type="radio" name="FrequenzaLavoro" value="0.85">
+                    <label>Continuo da 2 a 8 ore</label><br>
                 </td>
             </tr>
             <tr>
@@ -122,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Peso sollevato:
                 </td>
                 <td>
-
+                    <input type="number" min="0" max="350" name="DislocazioneAngolare">
                 </td>
             </tr>
         </table>
