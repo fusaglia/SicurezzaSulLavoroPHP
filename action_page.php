@@ -263,9 +263,11 @@ switch ($_GET["FrequenzaGesti"]) {
         $FrequenzaGesti = 0;
 
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+$IndiceSollevamento = $_GET["PesoSollevato"] / ($FattoreEta * $FattoreAltezza * $FattoreDisclocazioneV * $FattoreDisclocazioneO * $FattoreDislocazioneAngolare * $FattoreGiudizioPresa * $FrequenzaGesti);
 
-
-
+//fai ritornare ad index.php con i risultati
+header("Location: index.php?IndiceSollevamento=" . $IndiceSollevamento);
 
 ?>
 
