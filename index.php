@@ -1,20 +1,23 @@
 <?php
-require_once "config.php";
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="ins_tab">
-        <table>
-            <tr><th>PhonkAura</th><th>Dato</th></tr>
-            <tr><td>Nico Uovo</td><td>dato</td></tr>
+// login page, use config.php to access database
+require_once 'config.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-        </table>
-    </div>
-</body>
-</html>
+    if ($username === '' || $password === '') {
+        $error = 'Username and password are required.';
+    } else {
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE username = ?');
+        $stmt->execute([$username]);
+        $user = $stmt->fetch();
+
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            $error = 'Invalid username or password.';
+        }
+    }
+}
