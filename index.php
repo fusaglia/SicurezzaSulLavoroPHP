@@ -109,19 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Frequenza gesti al minuto:
                 </td>
                 <td>
-                    <input type="radio" name="FrequenzaGesti" value="0,2">
-                    <label>0.20</label><br>
-                    <input type="radio" name="FrequenzaGesti" value="1">
-                    <label>1</label><br>
-                    <input type="radio" name="FrequenzaGesti" value="4">
-                    <label>4</label><br>
-                    <input type="radio" name="FrequenzaGesti" value="6">
-                    <label>6</label><br>
-                    <input type="radio" name="FrequenzaGesti" value="9">
-                    <label>9</label><br>
-                    <input type="radio" name="FrequenzaGesti" value="12">
-                    <label>12</label><br>
-
+                    <input type="number" min="0.20" max="60" step="0.1" name="FrequenzaGesti">
                 </td>
             </tr>
             <tr>
@@ -131,9 +119,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <td>
                     <input type="radio" name="FrequenzaLavoro" value="1">
                     <label>Continuo < 1 ora </label><br>
-                    <input type="radio" name="FrequenzaLavoro" value="0.95">
+                    <input type="radio" name="FrequenzaLavoro" value="2">
                     <label>Continuo da 1 a 2 ore</label><br>
-                    <input type="radio" name="FrequenzaLavoro" value="0.85">
+                    <input type="radio" name="FrequenzaLavoro" value="3">
                     <label>Continuo da 2 a 8 ore</label><br>
                 </td>
             </tr>
