@@ -146,6 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </td>
             </tr>
         </table>
+        <input type = "submit">
     </form>
 </body>
 
